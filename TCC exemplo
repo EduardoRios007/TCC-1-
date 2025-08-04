@@ -1,0 +1,86 @@
+Beleza. Aqui está um app React Native simples com:
+
+Imagem
+
+2 páginas com navegação
+
+Texto formatado básico
+
+ScrollView
+
+Sem estilização
+
+
+
+---
+
+📄 App.js
+
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Tela1 from './Tela1';
+import Tela2 from './Tela2';
+
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Tela1">
+        <Stack.Screen name="Tela1" component={Tela1} />
+        <Stack.Screen name="Tela2" component={Tela2} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+
+---
+
+📄 Tela1.js
+
+import React from 'react';
+import { ScrollView, Text, Image, Button } from 'react-native';
+
+export default function Tela1({ navigation }) {
+  return (
+    <ScrollView>
+      <Text>Bem-vindo ao App</Text>
+      <Image source={require('./exemplo.png')} style={{ width: 200, height: 200 }} />
+      <Text>Este é um app simples com duas páginas e uma imagem.</Text>
+      <Button title="Ir para Página 2" onPress={() => navigation.navigate('Tela2')} />
+    </ScrollView>
+  );
+}
+
+
+---
+
+📄 Tela2.js
+
+import React from 'react';
+import { View, Text, Button } from 'react-native';
+
+export default function Tela2({ navigation }) {
+  return (
+    <View>
+      <Text>Você está na Página 2</Text>
+      <Button title="Voltar" onPress={() => navigation.goBack()} />
+    </View>
+  );
+}
+
+
+---
+
+🖼️ Imagem
+
+Coloque uma imagem chamada exemplo.png na mesma pasta dos arquivos (/).
+
+
+
+---
+
+Pronto! App funcional, direto ao ponto, sem estilo extra. Se quiser, posso gerar tudo em .zip também. Deseja?
+
