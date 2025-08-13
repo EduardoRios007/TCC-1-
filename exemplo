@@ -1,0 +1,555 @@
+react native 
+
+import React from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      {/* Logo */}
+      <View style={styles.logoBox}>
+        <Text style={styles.logoText}>LOGO EMPRESA</Text>
+      </View>
+
+      {/* Saudação */}
+      <Text style={styles.greeting}>Olá, Nome do Usuário! 👋</Text>
+
+      {/* Campo de busca */}
+      <View style={styles.searchBox}>
+        <Ionicons name="search" size={20} color="#555" style={{ marginRight: 5 }} />
+        <TextInput placeholder="Buscar entrevistas..." style={{ flex: 1 }} />
+      </View>
+
+      {/* Botão nova entrevista */}
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Começar nova entrevista</Text>
+      </TouchableOpacity>
+
+      {/* Minhas Entrevistas */}
+      <Text style={styles.sectionTitle}>Minhas Entrevistas</Text>
+
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Entrevista 1</Text>
+        <Text style={styles.cardSubtitle}>Feedback disponível ✓</Text>
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.cardTitle}>Entrevista 2</Text>
+        <Text style={styles.cardSubtitle}>Em análise pela IA ⏳</Text>
+      </View>
+
+      {/* Feedback Inteligente */}
+      <Text style={styles.sectionTitle}>🤖 Feedback Inteligente</Text>
+
+      {/* Painel de Progresso */}
+      <Text style={styles.sectionSubtitle}>Painel de Progresso</Text>
+      <View style={styles.progressContainer}>
+        <View style={styles.progressItem}>
+          <Text>Comunicação</Text>
+          <View style={styles.progressBar}>
+            <View style={[styles.progressFill, { width: '85%' }]} />
+          </View>
+          <Text>85%</Text>
+        </View>
+
+        <View style={styles.progressItem}>
+          <Text>Confiança</Text>
+          <View style={styles.progressBar}>
+            <View style={[styles.progressFill, { width: '78%' }]} />
+          </View>
+          <Text>78%</Text>
+        </View>
+
+        <View style={styles.progressItem}>
+          <Text>Clareza</Text>
+          <View style={styles.progressBar}>
+            <View style={[styles.progressFill, { width: '92%' }]} />
+          </View>
+          <Text>92%</Text>
+        </View>
+      </View>
+
+      {/* Barra de Navegação */}
+      <View style={styles.bottomNav}>
+        <View style={styles.navItem}>
+          <Ionicons name="home" size={24} color="#000" />
+          <Text>Início</Text>
+        </View>
+        <View style={styles.navItem}>
+          <Ionicons name="time" size={24} color="#000" />
+          <Text>Histórico</Text>
+        </View>
+        <View style={styles.navItem}>
+          <Ionicons name="settings" size={24} color="#000" />
+          <Text>Configurações</Text>
+        </View>
+        <View style={styles.navItem}>
+          <Ionicons name="help-circle" size={24} color="#000" />
+          <Text>Ajuda</Text>
+        </View>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: '#fff',
+    paddingTop: 50
+  },
+  logoBox: {
+    alignSelf: 'center',
+    padding: 10,
+    borderWidth: 1,
+    borderRadius: 5
+  },
+  logoText: {
+    fontWeight: 'bold'
+  },
+  greeting: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginVertical: 15
+  },
+  searchBox: {
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 8,
+    alignItems: 'center',
+    marginBottom: 15
+  },
+  button: {
+    backgroundColor: '#222',
+    padding: 15,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginBottom: 20
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold'
+  },
+  sectionTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 8
+  },
+  sectionSubtitle: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginTop: 8
+  },
+  card: {
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 8,
+    marginBottom: 10
+  },
+  cardTitle: {
+    fontWeight: 'bold'
+  },
+  cardSubtitle: {
+    color: '#555'
+  },
+  progressContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10
+  },
+  progressItem: {
+    alignItems: 'center'
+  },
+  progressBar: {
+    width: 70,
+    height: 8,
+    backgroundColor: '#ccc',
+    borderRadius: 5,
+    marginVertical: 5
+  },
+  progressFill: {
+    height: 8,
+    backgroundColor: '#222',
+    borderRadius: 5
+  },
+  bottomNav: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingVertical: 10,
+    borderTopWidth: 1,
+    marginTop: 'auto'
+  },
+  navItem: {
+    alignItems: 'center'
+  }
+});
+
+
+PHP
+
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('home');
+});
+
+
+HTML
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Entrevistas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+        }
+        .container {
+            padding: 20px;
+        }
+        .logo {
+            display: inline-block;
+            border: 1px solid #000;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+        .greeting {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px 0 10px;
+        }
+        .search {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+        .search input {
+            border: none;
+            outline: none;
+            flex: 1;
+        }
+        .btn {
+            background: #222;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 16px;
+            margin: 15px 0 8px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .card-title {
+            font-weight: bold;
+        }
+        .card-subtitle {
+            color: #555;
+        }
+        .progress-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .progress-item {
+            text-align: center;
+        }
+        .progress-bar {
+            background: #ccc;
+            height: 8px;
+            width: 70px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        .progress-fill {
+            background: #222;
+            height: 8px;
+            border-radius: 5px;
+        }
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid #ccc;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+        }
+        .nav-item {
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">LOGO EMPRESA</div>
+
+        <!-- Saudação -->
+        <div class="greeting">Olá, Nome do Usuário! 👋</div>
+
+        <!-- Busca -->
+        <div class="search">
+            <input type="text" placeholder="Buscar entrevistas...">
+        </div>
+
+        <!-- Botão -->
+        <div class="btn">Começar nova entrevista</div>
+
+        <!-- Minhas Entrevistas -->
+        <div class="section-title">Minhas Entrevistas</div>
+        <div class="card">
+            <div class="card-title">Entrevista 1</div>
+            <div class="card-subtitle">Feedback disponível ✓</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Entrevista 2</div>
+            <div class="card-subtitle">Em análise pela IA ⏳</div>
+        </div>
+
+        <!-- Feedback Inteligente -->
+        <div class="section-title">🤖 Feedback Inteligente</div>
+        <div class="section-title" style="font-size:14px;">Painel de Progresso</div>
+        <div class="progress-container">
+            <div class="progress-item">
+                <div>Comunicação</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%;"></div>
+                </div>
+                <div>85%</div>
+            </div>
+            <div class="progress-item">
+                <div>Confiança</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 78%;"></div>
+                </div>
+                <div>78%</div>
+            </div>
+            <div class="progress-item">
+                <div>Clareza</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 92%;"></div>
+                </div>
+                <div>92%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegação inferior -->
+    <div class="bottom-nav">
+        <div class="nav-item">🏠<br>Início</div>
+        <div class="nav-item">📜<br>Histórico</div>
+        <div class="nav-item">⚙️<br>Configurações</div>
+        <div class="nav-item">❓<br>Ajuda</div>
+    </div>
+</body>
+</html>
+
+
+
+
+react
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Entrevistas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+        }
+        .container {
+            padding: 20px;
+        }
+        .logo {
+            display: inline-block;
+            border: 1px solid #000;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+        .greeting {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px 0 10px;
+        }
+        .search {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+        .search input {
+            border: none;
+            outline: none;
+            flex: 1;
+        }
+        .btn {
+            background: #222;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 16px;
+            margin: 15px 0 8px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .card-title {
+            font-weight: bold;
+        }
+        .card-subtitle {
+            color: #555;
+        }
+        .progress-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .progress-item {
+            text-align: center;
+        }
+        .progress-bar {
+            background: #ccc;
+            height: 8px;
+            width: 70px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        .progress-fill {
+            background: #222;
+            height: 8px;
+            border-radius: 5px;
+        }
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid #ccc;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+        }
+        .nav-item {
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">LOGO EMPRESA</div>
+
+        <!-- Saudação -->
+        <div class="greeting">Olá, Nome do Usuário! 👋</div>
+
+        <!-- Busca -->
+        <div class="search">
+            <input type="text" placeholder="Buscar entrevistas...">
+        </div>
+
+        <!-- Botão -->
+        <div class="btn">Começar nova entrevista</div>
+
+        <!-- Minhas Entrevistas -->
+        <div class="section-title">Minhas Entrevistas</div>
+        <div class="card">
+            <div class="card-title">Entrevista 1</div>
+            <div class="card-subtitle">Feedback disponível ✓</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Entrevista 2</div>
+            <div class="card-subtitle">Em análise pela IA ⏳</div>
+        </div>
+
+        <!-- Feedback Inteligente -->
+        <div class="section-title">🤖 Feedback Inteligente</div>
+        <div class="section-title" style="font-size:14px;">Painel de Progresso</div>
+        <div class="progress-container">
+            <div class="progress-item">
+                <div>Comunicação</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%;"></div>
+                </div>
+                <div>85%</div>
+            </div>
+            <div class="progress-item">
+                <div>Confiança</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 78%;"></div>
+                </div>
+                <div>78%</div>
+            </div>
+            <div class="progress-item">
+                <div>Clareza</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 92%;"></div>
+                </div>
+                <div>92%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegação inferior -->
+    <div class="bottom-nav">
+        <div class="nav-item">🏠<br>Início</div>
+        <div class="nav-item">📜<br>Histórico</div>
+        <div class="nav-item">⚙️<br>Configurações</div>
+        <div class="nav-item">❓<br>Ajuda</div>
+    </div>
+</body>
+</html>
+
+
+
+
